@@ -1,2 +1,3 @@
 # contact-manager
-Contact Management Application using Context-API
+
+Contact Management Application using React and Context-API
