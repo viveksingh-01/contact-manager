@@ -7,7 +7,16 @@ class App extends React.Component {
     return (
       <div>
         <Header branding="Contact Manager" />
-        <Contact />
+        <Contact
+          name="John Doe"
+          email="johndoe@gmail.com"
+          phone="555-555-5555"
+        />
+        <Contact
+          name="Will Smith"
+          email="willsmith@gmail.com"
+          phone="333-333-3333"
+        />
       </div>
     );
   }
