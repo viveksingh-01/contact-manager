@@ -10,6 +10,10 @@ class Contact extends React.Component {
     this.setState({ showContactInfo: !this.state.showContactInfo });
   }
 
+  deleteContact() {
+    this.props.deleteContactHandler();
+  }
+
   render() {
     const { name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
@@ -20,6 +24,12 @@ class Contact extends React.Component {
           <i
             onClick={this.handleClick.bind(this)}
             className="fa fa-sort-down"
+            style={{ cursor: 'pointer' }}
+          ></i>
+          <i
+            onClick={this.deleteContact.bind(this)}
+            className="fa fa-times float-right"
+            style={{ cursor: 'pointer', color: 'red' }}
           ></i>
         </h4>
         {showContactInfo && (
