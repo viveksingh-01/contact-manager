@@ -15,6 +15,11 @@ function Header(props) {
               Home
             </a>
           </li>
+          <li className="nav-item">
+            <a href="/" className="nav-link">
+              About
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
