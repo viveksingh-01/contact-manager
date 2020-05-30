@@ -1,7 +1,7 @@
 import React from 'react';
 import Contact from './Contact';
 
-class Contacts extends React.Component {
+class ContactList extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -56,4 +56,4 @@ class Contacts extends React.Component {
   }
 }
 
-export default Contacts;
+export default ContactList;
