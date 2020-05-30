@@ -18,20 +18,22 @@ class Contact extends React.Component {
     const { name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
     return (
-      <div className="card card-body mb-3">
-        <h4>
-          {name}{' '}
-          <i
-            onClick={this.handleClick.bind(this)}
-            className="fa fa-sort-down"
+      <div className="card card-body mb-3 mx-auto" style={{ width: '80%' }}>
+        <div className="d-flex justify-content-between align-items-center">
+          <span
+            className="d-flex"
             style={{ cursor: 'pointer' }}
-          ></i>
+            onClick={this.handleClick.bind(this)}
+          >
+            <h5>{name}</h5>
+            <i className="fa fa-sort-down fa-lg mx-2"></i>
+          </span>
           <i
             onClick={this.deleteContact.bind(this)}
-            className="fa fa-times float-right"
+            className="fa fa-trash fa-lg"
             style={{ cursor: 'pointer', color: 'red' }}
           ></i>
-        </h4>
+        </div>
         {showContactInfo && (
           <ul className="list-group">
             <li className="list-group-item">Email: {email}</li>
