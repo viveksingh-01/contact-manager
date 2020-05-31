@@ -1,47 +1,17 @@
 import React from 'react';
 import Contact from './Contact';
+import { ContactContext } from './../ContactContext';
 
 class ContactList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      contacts: [
-        {
-          id: 0,
-          name: 'Chris Martin',
-          email: 'chris@gmail.com',
-          phone: '333-333-3333'
-        },
-        {
-          id: 1,
-          name: 'Johnny Buckland',
-          email: 'johhnyboy@gmail.com',
-          phone: '333-555-8888'
-        },
-        {
-          id: 2,
-          name: 'Guy Berryman',
-          email: 'mrberryman@gmail.com',
-          phone: '666-666-6666'
-        },
-        {
-          id: 3,
-          name: 'Will Champion',
-          email: 'wchampion@gmail.com',
-          phone: '222-222-2222'
-        }
-      ]
-    };
-  }
+  static contextType = ContactContext;
 
   deleteContact(id) {
-    this.setState({
-      contacts: this.state.contacts.filter((contact) => contact.id !== id)
-    });
+    const setContacts = this.context[1];
+    setContacts((contacts) => contacts.filter((item) => item.id !== id));
   }
 
   render() {
-    const { contacts } = this.state;
+    const contacts = this.context[0];
     return (
       <React.Fragment>
         {contacts.map((contact) => (

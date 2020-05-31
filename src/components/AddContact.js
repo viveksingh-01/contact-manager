@@ -1,6 +1,8 @@
 import React from 'react';
+import { ContactContext } from './../ContactContext';
 
 class AddContact extends React.Component {
+  static contextType = ContactContext;
   constructor() {
     super();
     this.state = {
@@ -21,6 +23,8 @@ class AddContact extends React.Component {
 
   submitForm(event) {
     event.preventDefault();
+    const setContacts = this.context[1];
+    setContacts((prevContacts) => [...prevContacts, this.state]);
   }
 
   render() {
